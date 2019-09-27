@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nodemon --exec babel-node --extensions \".ts,.js\" ./bin/www.ts",
     "test": "jest",
+    "test:integration": "npm start & jest",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch"
   },
@@ -16,6 +17,8 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "nock": "^11.3.5",
+    "node-fetch": "^2.6.0",
     "node-sass-middleware": "0.11.0",
     "pug": "^2.0.4"
   },
@@ -29,7 +32,9 @@
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-typescript": "^7.6.0",
     "jest": "^24.9.0",
+    "jest-environment-node": "^24.9.0",
     "nodemon": "^1.19.2",
+    "supertest": "^4.0.2",
     "typescript": "^3.6.3"
   }
 }

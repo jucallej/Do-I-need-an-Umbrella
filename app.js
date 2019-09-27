@@ -5,7 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
+// TODO do I need to import everything by hand?
 import indexRouter from './routes/index.ts';
+import needUmbrellaController from './routes/needUmbrellaController.ts';
 
 var app = express();
 
@@ -26,6 +28,7 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/', needUmbrellaController);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
