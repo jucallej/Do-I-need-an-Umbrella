@@ -1,7 +1,7 @@
-# Do I need and Umbrella
+# Do I need an Umbrella
 ## WIP
 
-Website that tells you if you need and umbrella and sends you a daily notification to remind you
+Website that tells you if you need an umbrella and sends you a daily notification to remind you
 
 ## Objective:
 
