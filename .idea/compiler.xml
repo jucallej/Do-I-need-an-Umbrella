@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <wildcardResourcePatterns>
+      <entry name="?*.properties" />
+      <entry name="?*.xml" />
+      <entry name="?*.html" />
+      <entry name="?*.dtd" />
+      <entry name="?*.tld" />
+      <entry name="?*.vm" />
+      <entry name="?*.xsd" />
+      <entry name="?*.sql" />
+      <entry name="?*.pl" />
+      <entry name="?*.gif" />
+      <entry name="?*.png" />
+      <entry name="?*.jpg" />
+      <entry name="?*.jpeg" />
+      <entry name="?*.bmp" />
+      <entry name="?*.emf" />
+      <entry name="?*.wmf" />
+      <entry name="?*.pdf" />
+      <entry name="*.xls" />
+      <entry name="*.xlsx" />
+    </wildcardResourcePatterns>
+  </component>
+</project>
