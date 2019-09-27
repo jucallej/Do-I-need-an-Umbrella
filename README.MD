@@ -15,10 +15,10 @@ Website that tells you if you need and umbrella and sends you a daily notificati
 ## Taks:
 
 * [DOING] Create some integration test for an endpoint that returns a boolean telling you if you need an umbrella. Mock the fetch to https://openweathermap.org for this
+    * [DOING] Add TS
     * [DOING] Set up Jest
     * [TODO] Set up nock
     * [TODO] Spin up everything an test it
-    * [TODO] Add TS (and possibly refactor the integration tests)
 * [TODO] Create the code in a TDD way
     * [TODO] Add linting
     * [TODO] Do the controller
