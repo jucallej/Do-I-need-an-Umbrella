@@ -1,11 +1,26 @@
 {
+    "cod": "200",
+    "message": 0.0097,
+    "cnt": 40,
     "list": [
         {
             "dt": 1569596400,
+            "main": {
+                "temp": 293.66,
+                "temp_min": 291.339,
+                "temp_max": 293.66,
+                "pressure": 1025.21,
+                "sea_level": 1025.21,
+                "grnd_level": 985.75,
+                "humidity": 71,
+                "temp_kf": 2.32
+            },
             "weather": [
                 {
+                    "id": 802,
                     "main": "Clouds",
                     "description": "scattered clouds",
+                    "icon": "03n"
                 }
             ],
             "clouds": {
@@ -1315,7 +1330,15 @@
         }
     ],
     "city": {
+        "id": 1851632,
         "name": "Shuzenji",
-        "country": "JP"
+        "coord": {
+            "lat": 34.9667,
+            "lon": 138.9333
+        },
+        "country": "JP",
+        "timezone": 32400,
+        "sunrise": 1569530117,
+        "sunset": 1569573344
     }
 }
