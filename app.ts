@@ -4,10 +4,35 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import sassMiddleware from 'node-sass-middleware';
+import fs from 'fs';
 
-// TODO do I need to import everything by hand?
-import indexRouter from './routes/index.ts';
-import needUmbrellaController from './routes/needUmbrellaController.ts';
+const getAllControllers = () => {
+
+  const fromDir = (startPath: string, filter: RegExp): string[] => {
+    let filesFound: string[] = [];
+
+    if (fs.existsSync(startPath)) {
+      const files = fs.readdirSync(startPath);
+
+      files.forEach((file) => {
+        const filename = path.join(startPath, file);
+        const stat = fs.lstatSync(filename);
+
+        if (stat.isDirectory()) {
+          filesFound = filesFound.concat(fromDir(filename, filter));
+        } else if (filename.match(filter)) {
+          filesFound.push(filename);
+        }
+      });
+    }
+
+    return filesFound;
+  };
+
+  const startPath = './api';
+  const filter = new RegExp('\/controller\/[^\/]*\\.ts');
+  return fromDir(startPath, filter);
+};
 
 const app = express();
 
@@ -27,8 +52,11 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/', needUmbrellaController);
+// setting the controllers
+getAllControllers().forEach((controllerPath) => {
+  const controller = require(`./${controllerPath}`).default;
+  app.use('/api', controller);
+});
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
