@@ -11,15 +11,15 @@ describe('NeedUmbrellaEndpoint', () => {
     // https://openweathermap.org/weather-conditions
 
     it.each`
-        weatherId     | result
-        ${200}        | ${true}
-        ${300}        | ${true}
-        ${400}        | ${true}
-        ${500}        | ${true}
-        ${600}        | ${true}
-        ${699}        | ${true}
-        ${700}        | ${false}
-        ${800}        | ${false}
+        weatherId | result
+        ${200}    | ${true}
+        ${300}    | ${true}
+        ${400}    | ${true}
+        ${500}    | ${true}
+        ${600}    | ${true}
+        ${699}    | ${true}
+        ${700}    | ${false}
+        ${800}    | ${false}
         `('returns true when all weather ids are equals or higher than 700 (in this case some weather id was set to ' +
             '$weatherId and it should return $result)', ({weatherId, result}, done) => {
 
