@@ -7,6 +7,12 @@ describe('NeedUmbrellaEndpoint', () => {
     const TEST_LATITUDE = '35';
     const TEST_LONGITUDE = '139';
     const OPEN_WEATHER_MAP_API_KEY = process.env.OPEN_WEATHER_MAP_API_KEY;
+    const MOCK_DATE = new Date(2019, 9, 30);
+
+    beforeAll(() => {
+        // @ts-ignore
+        global.Date = jest.fn(() => MOCK_DATE);
+    });
 
     // https://openweathermap.org/weather-conditions
 
