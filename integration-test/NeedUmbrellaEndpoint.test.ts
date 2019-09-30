@@ -1,6 +1,6 @@
 import nock from 'nock';
 import request from 'supertest';
-import App from '../app.js';
+import app from '../app';
 import OpenWeatherMapResponse from './mock_responses/5DaysOpenweathermap.json';
 
 describe('NeedUmbrellaEndpoint', () => {
@@ -30,7 +30,7 @@ describe('NeedUmbrellaEndpoint', () => {
             .get(`/data/2.5/forecast?lat=${TEST_LATITUDE}&lon=${TEST_LONGITUDE}&APPID=${OPEN_WEATHER_MAP_API_KEY}`)
             .reply(200, OpenWeatherMapResponse);
 
-        request(App)
+        request(app)
             .get('/api/needUmbrella')
             .expect(200,
                 { shouldUseUmbrella: result },
