@@ -21,6 +21,7 @@ describe('NeedUmbrellaEndpoint', () => {
         ${700}    | ${false}
         ${800}    | ${false}
         `('returns true when all weather ids are equals or higher than 700 (in this case some weather id was set to ' +
+            // @ts-ignore
             '$weatherId and it should return $result)', ({weatherId, result}, done) => {
 
         OpenWeatherMapResponse.list[3].weather[0].id = weatherId;

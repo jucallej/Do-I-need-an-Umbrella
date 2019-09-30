@@ -17,7 +17,8 @@ const presets = [
 
 const plugins = [
     "@babel/proposal-class-properties",
-    "@babel/proposal-object-rest-spread"
+    "@babel/proposal-object-rest-spread",
+    "@babel/plugin-proposal-optional-chaining"
 ];
 
 module.exports = { presets, plugins };
