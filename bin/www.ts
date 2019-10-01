@@ -83,8 +83,9 @@ function onError(error: { syscall: string; code: string; }) {
 
 function onListening() {
   const addr = server.address();
+
   const bind = typeof addr === 'string'
     ? 'pipe ' + addr
-    : 'port ' + addr?.port;
+    : 'port ' + addr!.port;
   debug('Listening on ' + bind);
 }

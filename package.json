@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon --exec babel-node --extensions \".ts,.js\" ./bin/www.ts",
-    "test": "jest",
+    "test": "npm run type-check && jest",
     "test:integration": "npm start & jest",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch"
