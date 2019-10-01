@@ -26,20 +26,22 @@ describe('NeedUmbrellaEndpoint', () => {
         ${699}    | ${true}
         ${700}    | ${false}
         ${800}    | ${false}
-        `('returns true when all weather ids are equals or higher than 700 (in this case some weather id was set to ' +
-            // @ts-ignore
-            '$weatherId and it should return $result)', ({weatherId, result}, done) => {
+    `(
+        'returns true when all weather ids are equals or higher than 700 (in this case some weather id was set to ' +
+            '$weatherId and it should return $result)',
+        // @ts-ignore
+        ({ weatherId, result }, done) => {
+            OpenWeatherMapResponse.list[3].weather[0].id = weatherId;
 
-        OpenWeatherMapResponse.list[3].weather[0].id = weatherId;
+            nock('https://api.openweathermap.org')
+                .get(
+                    `/data/2.5/forecast?lat=${TEST_LATITUDE}&lon=${TEST_LONGITUDE}&APPID=${OPEN_WEATHER_MAP_API_KEY}`
+                )
+                .reply(200, OpenWeatherMapResponse);
 
-        nock('https://api.openweathermap.org')
-            .get(`/data/2.5/forecast?lat=${TEST_LATITUDE}&lon=${TEST_LONGITUDE}&APPID=${OPEN_WEATHER_MAP_API_KEY}`)
-            .reply(200, OpenWeatherMapResponse);
-
-        request(app)
-            .get('/api/needUmbrella')
-            .expect(200,
-                { shouldUseUmbrella: result },
-                done);
-    });
+            request(app)
+                .get('/api/needUmbrella')
+                .expect(200, { shouldUseUmbrella: result }, done);
+        }
+    );
 });
