@@ -5,7 +5,6 @@
   "scripts": {
     "start": "nodemon --exec babel-node --extensions \".ts,.js\" ./bin/www.ts",
     "test": "npm run type-check && npm run linting && jest",
-    "test:integration": "npm start & jest",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "linting": "eslint --ext .ts api/ integration-test/ app.ts"
