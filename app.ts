@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import sassMiddleware from 'node-sass-middleware';
 import fs from 'fs';
+require('express-async-errors');
 
 const getAllControllers = () => {
     const fromDir = (startPath: string, filter: RegExp): string[] => {
