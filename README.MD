@@ -1,4 +1,6 @@
 # Do I need an Umbrella
+[![Actions Status](https://github.com/jucallej/Do-I-need-an-Umbrella/workflows/CI/badge.svg)](https://github.com/jucallej/Do-I-need-an-Umbrella/actions)
+
 ## WIP
 
 Website that tells you if you need an umbrella and sends you a daily notification to remind you
