@@ -10,14 +10,10 @@ export const shouldUseUmbrella = async (
     limitDateChecked.setTime(limitDateChecked.getTime() + 12 * 60 * 60 * 1000);
 
     return !weatherData.list
-        .filter(
-            (dataPoint: { dt: number }) =>
-                new Date(dataPoint.dt * 1000) <= limitDateChecked
-        )
-        .every((dataPoint: { weather: Array<{ id: number }> }) =>
+        .filter(dataPoint => new Date(dataPoint.dt * 1000) <= limitDateChecked)
+        .every(dataPoint =>
             dataPoint.weather.every(
-                (weatherPoint: { id: number }) =>
-                    weatherPoint.id >= MIN_VALUE_FOR_GOOD_WEATHER
+                weatherPoint => weatherPoint.id >= MIN_VALUE_FOR_GOOD_WEATHER
             )
         );
 };
