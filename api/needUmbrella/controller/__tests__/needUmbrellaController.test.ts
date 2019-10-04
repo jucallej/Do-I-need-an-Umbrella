@@ -23,15 +23,17 @@ describe('Need Umbrella Controller', () => {
         // @ts-ignore
         ({ shouldUseUmbrellaReturnValue }, done) => {
             (shouldUseUmbrella as jest.Mock).mockImplementation((lat, lon) => {
-                    if (lat === TEST_LATITUDE && lon === TEST_LONGITUDE) {
-                        return Promise.resolve(shouldUseUmbrellaReturnValue);
-                    } else {
-                        return Promise.reject();
-                    }
-                });
+                if (lat === TEST_LATITUDE && lon === TEST_LONGITUDE) {
+                    return Promise.resolve(shouldUseUmbrellaReturnValue);
+                } else {
+                    return Promise.reject();
+                }
+            });
 
             request(app)
-                .get(`/test/needUmbrella?lat=${TEST_LATITUDE}&lon=${TEST_LONGITUDE}`)
+                .get(
+                    `/test/needUmbrella?lat=${TEST_LATITUDE}&lon=${TEST_LONGITUDE}`
+                )
                 .expect(
                     200,
                     { shouldUseUmbrella: shouldUseUmbrellaReturnValue },

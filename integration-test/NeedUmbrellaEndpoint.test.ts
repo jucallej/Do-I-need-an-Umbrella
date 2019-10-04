@@ -7,11 +7,14 @@ describe('NeedUmbrellaEndpoint', () => {
     const TEST_LATITUDE = 35;
     const TEST_LONGITUDE = 139;
     const OPEN_WEATHER_MAP_API_KEY = process.env.OPEN_WEATHER_MAP_API_KEY;
-    const MOCK_DATE = new Date(2019, 9, 30);
+    const MOCK_DATE = new Date('2019-09-27T15:00:00.000Z');
 
     beforeAll(() => {
+        const REAL_DATE = global.Date;
         // @ts-ignore
-        global.Date = jest.fn(() => MOCK_DATE);
+        global.Date = jest.fn(firstArg =>
+            firstArg ? new REAL_DATE(firstArg) : MOCK_DATE
+        );
     });
 
     // https://openweathermap.org/weather-conditions
@@ -40,7 +43,9 @@ describe('NeedUmbrellaEndpoint', () => {
                 .reply(200, OpenWeatherMapResponse);
 
             request(app)
-                .get(`/api/needUmbrella?lat=${TEST_LATITUDE}&lon=${TEST_LONGITUDE}`)
+                .get(
+                    `/api/needUmbrella?lat=${TEST_LATITUDE}&lon=${TEST_LONGITUDE}`
+                )
                 .expect(200, { shouldUseUmbrella: result }, done);
         }
     );
