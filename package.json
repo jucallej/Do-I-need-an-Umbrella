@@ -10,7 +10,7 @@
     "test": "npm run type-check && npm run linting && jest",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "linting": "eslint --ext .ts api/ integration-test/ app.ts",
+    "linting": "eslint --ext .ts api/ integration-test/ frontend/ app.ts",
     "dev": "webpack --watch --progress & nodemon index.js"
   },
   "dependencies": {
