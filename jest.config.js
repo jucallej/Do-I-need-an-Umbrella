@@ -1,4 +1,4 @@
 module.exports = {
     verbose: true,
-    setupFiles: ['./jest-helpers/setupJest.js']
+    setupFiles: ['./jest-helpers/setupJest.ts']
 };
