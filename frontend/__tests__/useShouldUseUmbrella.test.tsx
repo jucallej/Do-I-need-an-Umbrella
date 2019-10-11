@@ -5,10 +5,6 @@ import { UmbrellaState } from "../app";
 
 describe('shouldUseUmbrella', () => {
 
-  beforeEach(() => {
-    fetchMock.resetMocks();
-  });
-
   it('should return by default LOADING', () => {
     const { result } = renderHook(() => useShouldUseUmbrella(123, 1234));
     expect(result.current).toBe(UmbrellaState.LOADING);
