@@ -5,9 +5,12 @@ import { UmbrellaState } from "../app";
 
 describe('shouldUseUmbrella', () => {
 
-  it('should return by default LOADING', () => {
-    const { result } = renderHook(() => useShouldUseUmbrella(123, 1234));
+  it('should return by default LOADING', async () => {
+    fetchMock.mockResponseOnce(JSON.stringify({shouldUseUmbrella: true}));
+
+    const { result, waitForNextUpdate } = renderHook(() => useShouldUseUmbrella(123, 1234));
     expect(result.current).toBe(UmbrellaState.LOADING);
+    await waitForNextUpdate();
   });
 
   it('should change from LOADING to USE_UMBRELLA when fetch response is shouldUseUmbrella true', async () => {
