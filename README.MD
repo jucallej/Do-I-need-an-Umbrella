@@ -13,4 +13,4 @@ Website that tells you if you need an umbrella and sends you a daily notificatio
 * Have UI tests
 * Have a pipeline for it
 * Use a TDD approach
-* Use machine learning (tensorflow)
+* Use machine learning (tensorflow) to predict if the umbrella is needed
