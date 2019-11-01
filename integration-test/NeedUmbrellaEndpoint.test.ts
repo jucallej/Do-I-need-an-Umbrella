@@ -1,6 +1,6 @@
 import nock from 'nock';
 import request from 'supertest';
-import app from '../app';
+import app from './../app';
 import OpenWeatherMapResponse from './mock_responses/5DaysOpenweathermap.json';
 
 describe('NeedUmbrellaEndpoint', () => {
