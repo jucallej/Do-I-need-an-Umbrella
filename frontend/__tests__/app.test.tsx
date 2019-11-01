@@ -1,7 +1,7 @@
 import * as React from "react";
 import { shallow } from 'enzyme';
-import App, { UmbrellaState } from './../App';
-import { useShouldUseUmbrella } from './../useShouldUseUmbrella';
+import App, { UmbrellaState } from '../App';
+import { useShouldUseUmbrella } from '../useShouldUseUmbrella';
 jest.mock('../useShouldUseUmbrella');
 
 describe('App', () => {

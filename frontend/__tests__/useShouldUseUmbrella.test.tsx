@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderHook } from '@testing-library/react-hooks'
-import { useShouldUseUmbrella } from "./../useShouldUseUmbrella";
-import { UmbrellaState } from "./../app";
+import { useShouldUseUmbrella } from "../useShouldUseUmbrella";
+import { UmbrellaState } from "../app";
 
 describe('shouldUseUmbrella', () => {
 
