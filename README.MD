@@ -7,9 +7,10 @@ Website that tells you if you need an umbrella and sends you a daily notificatio
 
 ## Objective:
 
-* Create a full stack website that checks https://openweathermap.org and tells the user if they should take an umbrella with them today
+* Create a full stack website that checks OpenWeatherMap and tells the user if they should take an umbrella with them that day
 * Use node && typescript && react
 * Have tests (and linting)
 * Have UI tests
 * Have a pipeline for it
 * Use a TDD approach
+* Upload it somewhere
