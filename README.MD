@@ -13,4 +13,4 @@ Website that tells you if you need an umbrella and sends you a daily notificatio
 * Have UI tests
 * Have a pipeline for it
 * Use a TDD approach
-* Upload it somewhere
+* Run it somewhere
