@@ -5,6 +5,8 @@ provider:
   runtime: nodejs10.x
   stage: dev
   region: eu-west-1
+  environment:
+    OPEN_WEATHER_MAP_API_KEY: ${env:OPEN_WEATHER_MAP_API_KEY}
 
 functions:
   app:
