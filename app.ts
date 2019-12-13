@@ -7,7 +7,7 @@ import sassMiddleware from 'node-sass-middleware';
 import fs from 'fs';
 require('express-async-errors');
 
-const getAllControllers = () => {
+const getAllControllers = (): string[] => {
     const fromDir = (startPath: string, filter: RegExp): string[] => {
         let filesFound: string[] = [];
 

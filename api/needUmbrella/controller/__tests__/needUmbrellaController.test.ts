@@ -4,6 +4,10 @@ import { shouldUseUmbrella } from '../../service/needUmbrellaService';
 import needUmbrellaController from '../needUmbrellaController';
 jest.mock('../../service/needUmbrellaService');
 
+export interface NeedUmbrellaControllerParams {
+    shouldUseUmbrellaReturnValue: boolean;
+}
+
 describe('Need Umbrella Controller', () => {
     const TEST_LATITUDE = 35;
     const TEST_LONGITUDE = 139;
@@ -20,8 +24,10 @@ describe('Need Umbrella Controller', () => {
         ${false}
     `(
         'returns shouldUseUmbrellaReturnValue in the json response when shouldUseUmbrellaReturnValue returns $shouldUseUmbrella',
-        // @ts-ignore
-        ({ shouldUseUmbrellaReturnValue }, done) => {
+        (args, done) => {
+            const {
+                shouldUseUmbrellaReturnValue
+            } = args as NeedUmbrellaControllerParams;
             (shouldUseUmbrella as jest.Mock).mockImplementation((lat, lon) => {
                 if (lat === TEST_LATITUDE && lon === TEST_LONGITUDE) {
                     return Promise.resolve(shouldUseUmbrellaReturnValue);

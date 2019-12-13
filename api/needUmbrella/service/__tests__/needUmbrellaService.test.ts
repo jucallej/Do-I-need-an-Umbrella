@@ -1,6 +1,7 @@
 import OpenWeatherMapResponse from '../../../../integration-test/mock_responses/5DaysOpenweathermap.json';
 import { getWeatherData } from '../../../client/openWeatherMap/openWeatherClient';
 import { shouldUseUmbrella } from '../needUmbrellaService';
+import { NeedUmbrellaEndpoint } from '../../../../integration-test/NeedUmbrellaEndpoint.test';
 jest.mock('../../../client/openWeatherMap/openWeatherClient');
 
 describe('Need Umbrella Service', () => {
@@ -9,11 +10,8 @@ describe('Need Umbrella Service', () => {
     const MOCK_DATE = new Date('2019-09-27T15:00:00.000Z');
 
     beforeAll(() => {
-        const REAL_DATE = global.Date;
-        // @ts-ignore
-        global.Date = jest.fn(firstArg =>
-            firstArg ? new REAL_DATE(firstArg) : MOCK_DATE
-        );
+        const mock = jest.spyOn(Date, 'now');
+        mock.mockImplementation(() => MOCK_DATE.getTime());
     });
 
     it.each`
@@ -29,8 +27,8 @@ describe('Need Umbrella Service', () => {
     `(
         'returns true when all weather ids in the next 12 hours are equals or higher than 700 (in this case some weather id was set to ' +
             '$weatherId and it should return $result)',
-        // @ts-ignore
-        ({ weatherId, result }, done) => {
+        (args, done) => {
+            const { weatherId, result } = args as NeedUmbrellaEndpoint;
             OpenWeatherMapResponse.list[3].weather[0].id = weatherId;
             // Make sure the values after 12 hours are ignored
             OpenWeatherMapResponse.list[38].weather[0].id = 200;

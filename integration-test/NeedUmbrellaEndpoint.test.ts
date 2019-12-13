@@ -3,6 +3,11 @@ import request from 'supertest';
 import app from '../app';
 import OpenWeatherMapResponse from './mock_responses/5DaysOpenweathermap.json';
 
+export interface NeedUmbrellaEndpoint {
+    weatherId: number;
+    result: boolean;
+}
+
 describe('NeedUmbrellaEndpoint', () => {
     const TEST_LATITUDE = 35;
     const TEST_LONGITUDE = 139;
@@ -10,11 +15,8 @@ describe('NeedUmbrellaEndpoint', () => {
     const MOCK_DATE = new Date('2019-09-27T15:00:00.000Z');
 
     beforeAll(() => {
-        const REAL_DATE = global.Date;
-        // @ts-ignore
-        global.Date = jest.fn(firstArg =>
-            firstArg ? new REAL_DATE(firstArg) : MOCK_DATE
-        );
+        const mock = jest.spyOn(Date, 'now');
+        mock.mockImplementation(() => MOCK_DATE.getTime());
     });
 
     // https://openweathermap.org/weather-conditions
@@ -32,8 +34,8 @@ describe('NeedUmbrellaEndpoint', () => {
     `(
         'returns true when all weather ids are equals or higher than 700 (in this case some weather id was set to ' +
             '$weatherId and it should return $result)',
-        // @ts-ignore
-        ({ weatherId, result }, done) => {
+        (args, done) => {
+            const { weatherId, result } = args as NeedUmbrellaEndpoint;
             OpenWeatherMapResponse.list[3].weather[0].id = weatherId;
 
             nock('https://api.openweathermap.org')

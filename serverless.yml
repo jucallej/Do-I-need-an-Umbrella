@@ -22,6 +22,11 @@ plugins:
 custom:
   webpack:
     webpackConfig: 'be.config.js'
-    includeModules: false
+    includeModules:
+      forceExclude:
+        - '@testing-library/react-hooks'
+        - 'nock'
+        - 'supertest'
+        - 'enzyme'
     packager: 'npm'
     excludeFiles: src/**/*.test.js
