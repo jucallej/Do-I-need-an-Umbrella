@@ -28,6 +28,7 @@ jobs:
       - name: npm install, build and deploy to aws
         run: |
           npm ci
+          npm test
           npm run deploy:be
         env:
           CI: true
