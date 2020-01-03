@@ -1,6 +1,5 @@
 const path = require('path');
 const slsw = require('serverless-webpack');
-const nodeExternals = require('webpack-node-externals');
 const isLocal = slsw.lib.webpack.isLocal;
 
 module.exports = {
@@ -8,7 +7,6 @@ module.exports = {
   context: path.join( __dirname, '' ),
   devtool: 'source-map',
   target: 'node',
-  externals: [nodeExternals()],
   entry: slsw.lib.entries,
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']

@@ -1,7 +1,7 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import paths from './api/paths';
+import paths from './paths';
 require('express-async-errors');
 
 const app = express();

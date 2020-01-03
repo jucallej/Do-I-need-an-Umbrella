@@ -1,6 +1,6 @@
 import nock from 'nock';
 import request from 'supertest';
-import app from '../app';
+import app from '../api/app';
 import OpenWeatherMapResponse from './mock_responses/5DaysOpenweathermap.json';
 
 export interface NeedUmbrellaEndpoint {

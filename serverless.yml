@@ -22,7 +22,5 @@ plugins:
 custom:
   webpack:
     webpackConfig: 'be.config.js'
-    includeModules:
-      packagePath: './serverless.json'
     packager: 'npm'
     excludeFiles: src/**/*.test.js
