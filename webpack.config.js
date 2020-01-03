@@ -26,7 +26,7 @@ module.exports = {
     publicPath: '/public/',
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    contentBase: path.join(__dirname, 'frontend/public'),
     proxy: {
       '/api': {
         target: 'http://localhost:3000'

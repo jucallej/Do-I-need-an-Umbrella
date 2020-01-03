@@ -6,7 +6,7 @@ export const shouldUseUmbrella = async (
     lon: number
 ): Promise<boolean> => {
     const weatherData = await getWeatherData(lat, lon);
-    const limitDateChecked = new Date();
+    const limitDateChecked = new Date(Date.now());
     limitDateChecked.setTime(limitDateChecked.getTime() + 12 * 60 * 60 * 1000);
 
     return !weatherData.list
