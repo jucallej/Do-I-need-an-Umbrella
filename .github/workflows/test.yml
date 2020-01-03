@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -18,9 +18,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build and deploy to github pages
+    - name: npm install, test and deploy
       run: |
         npm ci
-        npm run build:fe
       env:
         CI: true

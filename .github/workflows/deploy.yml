@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [12.x]
 
     steps:
       - uses: actions/checkout@v1
@@ -25,16 +25,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, build and deploy to github pages
+      - name: npm install, build and deploy to aws
         run: |
           npm ci
-          npm run build:fe
+          npm run deploy:be
         env:
           CI: true
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@3.0.2
-        with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BASE_BRANCH: feature/upload_to_aws # TODO: change after testing
-          BRANCH: gh-pages
-          FOLDER: dist
+          OPEN_WEATHER_MAP_API_KEY: ${{ secrets.OPEN_WEATHER_MAP_API_KEY }}
