@@ -3,17 +3,12 @@ name: Deploy
 on:
   push:
     branches:
-      - feature/upload_to_aws
-#  pull_request:
-#    types: [closed]
-#    branches:
-#      - master
+      - master
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-#    if: github.event.pull_request.merged
 
     strategy:
       matrix:
