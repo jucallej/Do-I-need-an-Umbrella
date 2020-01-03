@@ -23,10 +23,6 @@ custom:
   webpack:
     webpackConfig: 'be.config.js'
     includeModules:
-      forceExclude:
-        - '@testing-library/react-hooks'
-        - 'nock'
-        - 'supertest'
-        - 'enzyme'
+      packagePath: './serverless.json'
     packager: 'npm'
     excludeFiles: src/**/*.test.js
