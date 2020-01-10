@@ -1,8 +1,9 @@
 const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  context: path.join( __dirname, 'src' ),
+  // context: path.join( __dirname, 'src' ),
   devtool: 'source-map',
   entry: {
     app: path.resolve(__dirname, './frontend')
@@ -22,9 +23,14 @@ module.exports = {
   },
   output: {
     path: path.resolve( __dirname, 'dist' ),
-    filename: '[name].bundle.js',
+    filename: 'public/[name].bundle.js',
     publicPath: '/public/',
   },
+  plugins: [
+    new CopyPlugin([
+      { from: './frontend/public/', to: './' }
+    ]),
+  ],
   devServer: {
     contentBase: path.join(__dirname, 'frontend/public'),
     proxy: {
