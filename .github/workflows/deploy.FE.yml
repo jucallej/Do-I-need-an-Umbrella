@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy FE
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, build and deploy to aws
+      - name: npm install and build the FE
         run: |
           npm ci
           npm test
