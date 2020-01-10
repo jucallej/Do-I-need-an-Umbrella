@@ -1,9 +1,8 @@
 const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  // context: path.join( __dirname, 'src' ),
   devtool: 'source-map',
   entry: {
     app: path.resolve(__dirname, './frontend')
@@ -24,12 +23,10 @@ module.exports = {
   output: {
     path: path.resolve( __dirname, 'dist' ),
     filename: 'public/[name].bundle.js',
-    publicPath: '/public/',
+    publicPath: '/',
   },
   plugins: [
-    new CopyPlugin([
-      { from: './frontend/public/', to: './' }
-    ]),
+    new HtmlWebpackPlugin({ template: 'frontend/public/index.ejs', hash: true }),
   ],
   devServer: {
     contentBase: path.join(__dirname, 'frontend/public'),
