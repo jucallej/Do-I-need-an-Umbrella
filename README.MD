@@ -1,16 +1,17 @@
 # Do I need an Umbrella
 [![Actions Status](https://github.com/jucallej/Do-I-need-an-Umbrella/workflows/CI/badge.svg)](https://github.com/jucallej/Do-I-need-an-Umbrella/actions)
 
-## WIP
+## Introduction
 
-Website that tells you if you need an umbrella and sends you a daily notification to remind you
+Website that tells you if you need an umbrella in your location that day
 
-## Objective:
+## Tech stack:
 
-* Create a full stack website that checks OpenWeatherMap and tells the user if they should take an umbrella with them that day
-* Use node && typescript && react
-* Have tests (and linting)
-* Have UI tests
-* Have a pipeline for it
-* Use a TDD approach
-* Run it somewhere
+* Full stack website that uses `Node.js` && `React` (with `Express.js` && `TypeScript`)
+* Fetches information from a 3rd party API using an API key (OpenWeatherMap)
+* Has tests using `Jest` with `Enzyme` && `SuperTest` && `Nock`
+* Has a CI (`GitHub Actions`) where it runs the test before merging a PR and when merged it pushed the BE to AWS `Lambdas` using the `Serverless` framework
+* Uses secrets to push to AWS and to fetch from OpenWeatherMap using environmental variables
+* Created using TDD
+
+## [Future enhancements](/projects/)
