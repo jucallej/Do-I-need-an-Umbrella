@@ -2,8 +2,8 @@ name: Deploy
 
 on:
   push:
-    branches:
-      - master
+#    branches:
+#      - master
 
 jobs:
   build:
@@ -20,13 +20,23 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: npm install, build and deploy to aws
         run: |
           npm ci
           npm test
           npm run deploy:be
+          npm run build:fe
         env:
           CI: true
           OPEN_WEATHER_MAP_API_KEY: ${{ secrets.OPEN_WEATHER_MAP_API_KEY }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: deploy fe
+          uses: JamesIves/github-pages-deploy-action@releases/v3
+          with:
+            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+            BRANCH: gh-pages
+            FOLDER: dist
+            CLEAN: true
