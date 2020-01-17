@@ -22,11 +22,11 @@ module.exports = {
   },
   output: {
     path: path.resolve( __dirname, 'dist' ),
-    filename: 'public/[name].bundle.js',
+    filename: 'public/[name].[contenthash].bundle.js',
     publicPath: '/',
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: 'frontend/public/index.ejs', hash: true }),
+    new HtmlWebpackPlugin({ template: 'frontend/public/index.ejs' }),
   ],
   devServer: {
     contentBase: path.join(__dirname, 'frontend/public'),
