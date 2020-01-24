@@ -1,9 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
-  context: path.join( __dirname, 'src' ),
-  devtool: 'source-map',
   entry: {
     app: path.resolve(__dirname, './frontend')
   },
@@ -22,15 +19,10 @@ module.exports = {
   },
   output: {
     path: path.resolve( __dirname, 'dist' ),
-    filename: '[name].bundle.js',
-    publicPath: '/public/',
+    filename: 'public/[name].[contenthash].bundle.js',
+    publicPath: '/Do-I-need-an-Umbrella',
   },
   devServer: {
     contentBase: path.join(__dirname, 'frontend/public'),
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3000'
-      }
-    }
   }
 };
