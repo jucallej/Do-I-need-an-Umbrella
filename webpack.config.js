@@ -24,7 +24,7 @@ module.exports = {
   output: {
     path: path.resolve( __dirname, 'dist' ),
     filename: 'public/[name].[contenthash].bundle.js',
-    publicPath: '/',
+    publicPath: '/Do-I-need-an-Umbrella',
   },
   plugins: [
     new HtmlWebpackPlugin({ template: 'frontend/public/index.ejs', API_URL: awsStack.ServiceEndpoint }),
