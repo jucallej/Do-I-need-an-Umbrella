@@ -32,7 +32,7 @@ export const useShouldUseUmbrella = (): UmbrellaState => {
                     case UmbrellaState.LOADING_WEATHER:
                         {
                             const response = await fetch(
-                                `/api/needUmbrella?lat=${locationCoordinates.latitude}&lon=${locationCoordinates.longitude}`
+                              `${window.API_GW_URL}/api/needUmbrella?lat=${locationCoordinates.latitude}&lon=${locationCoordinates.longitude}`
                             );
                             const json = await response.json();
                             if (!isMounted()) return;

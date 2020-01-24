@@ -5,8 +5,8 @@
   "scripts": {
     "start": "npm run start:fe & npm run start:be",
     "start:be": "serverless offline",
-    "start:fe": "webpack-dev-server",
-    "build:fe": "webpack --progress",
+    "start:fe": "webpack-dev-server --config webpack.dev.js",
+    "build:fe": "webpack --progress --config webpack.prod.js",
     "deploy:be": "serverless deploy",
     "test": "npm run type-check && npm run linting && jest",
     "type-check": "tsc --noEmit",
@@ -57,8 +57,8 @@
     "eslint-plugin-prettier": "3.1.1",
     "express": "4.17.1",
     "express-async-errors": "3.1.1",
-    "html-webpack-plugin": "3.2.0",
     "html-replace-webpack-plugin": "2.5.6",
+    "html-webpack-plugin": "3.2.0",
     "http-errors": "1.7.3",
     "jest": "24.9.0",
     "jest-environment-node": "24.9.0",
@@ -84,6 +84,7 @@
     "webpack": "4.41.2",
     "webpack-cli": "3.3.10",
     "webpack-dev-server": "3.9.0",
+    "webpack-merge": "4.2.2",
     "webpack-node-externals": "1.7.2"
   }
 }

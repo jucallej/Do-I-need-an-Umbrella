@@ -1,10 +1,6 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const awsStack = require('./stack.json');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'source-map',
   entry: {
     app: path.resolve(__dirname, './frontend')
   },
@@ -26,15 +22,7 @@ module.exports = {
     filename: 'public/[name].[contenthash].bundle.js',
     publicPath: '/Do-I-need-an-Umbrella',
   },
-  plugins: [
-    new HtmlWebpackPlugin({ template: 'frontend/public/index.ejs', API_URL: awsStack.ServiceEndpoint }),
-  ],
   devServer: {
     contentBase: path.join(__dirname, 'frontend/public'),
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3000'
-      }
-    }
   }
 };
