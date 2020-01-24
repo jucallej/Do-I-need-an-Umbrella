@@ -12,4 +12,5 @@ declare global {
       ) => void;
     }
   }
+  interface Window { API_GW_URL: string; }
 }

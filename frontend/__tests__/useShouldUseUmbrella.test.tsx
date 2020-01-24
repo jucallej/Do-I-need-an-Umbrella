@@ -8,6 +8,10 @@ jest.mock('../utils');
 
 describe('shouldUseUmbrella', () => {
 
+  beforeAll(() => {
+    window.API_GW_URL = 'https://test.com'
+  });
+
   beforeEach(() => {
     fetchMock.resetMocks();
     (getCurrentPosition as jest.Mock).mockReturnValue(Promise.resolve({coords: {latitude: 1, longitude: 2}}));
@@ -33,7 +37,7 @@ describe('shouldUseUmbrella', () => {
     await waitForNextUpdate();
     expect(result.current).toBe(UmbrellaState.USE_UMBRELLA);
     expect(getCurrentPosition).toHaveBeenCalled();
-    expect(fetch).toHaveBeenCalledWith('/api/needUmbrella?lat=1&lon=2');
+    expect(fetch).toHaveBeenCalledWith('https://test.com/api/needUmbrella?lat=1&lon=2');
   });
 
   it('changes from LOADING_LOCATION to LOADING_WEATHER to DO_NOT_USE_UMBRELLA using getCurrentPosition and fetching the data', async () => {
@@ -48,7 +52,7 @@ describe('shouldUseUmbrella', () => {
     await waitForNextUpdate();
     expect(result.current).toBe(UmbrellaState.DO_NOT_USE_UMBRELLA);
     expect(getCurrentPosition).toHaveBeenCalled();
-    expect(fetch).toHaveBeenCalledWith('/api/needUmbrella?lat=1&lon=2');
+    expect(fetch).toHaveBeenCalledWith('https://test.com/api/needUmbrella?lat=1&lon=2');
   });
 
   it('changes from LOADING_LOCATION to ERROR when getCurrentPosition returns an error', async () => {
@@ -75,6 +79,6 @@ describe('shouldUseUmbrella', () => {
     await waitForNextUpdate();
     expect(result.current).toBe(UmbrellaState.ERROR);
     expect(getCurrentPosition).toHaveBeenCalled();
-    expect(fetch).toHaveBeenCalledWith('/api/needUmbrella?lat=1&lon=2');
+    expect(fetch).toHaveBeenCalledWith('https://test.com/api/needUmbrella?lat=1&lon=2');
   });
 });
