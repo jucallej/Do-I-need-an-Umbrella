@@ -14,4 +14,4 @@ Website that tells you if you need an umbrella in your location that day
 * Uses secrets to push to AWS and to fetch from OpenWeatherMap using environmental variables
 * Created using TDD
 
-## [Future enhancements](./projects/)
+## [Future enhancements](https://github.com/jucallej/Do-I-need-an-Umbrella/projects)
