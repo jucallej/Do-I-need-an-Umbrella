@@ -71,3 +71,5 @@ fabric.properties
 /node_modules/
 /dist/
 /.webpack/
+
+./stack.json

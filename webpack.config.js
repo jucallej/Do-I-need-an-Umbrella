@@ -1,5 +1,6 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const awsStack = require('./stack.json');
 
 module.exports = {
   mode: 'development',
@@ -26,7 +27,7 @@ module.exports = {
     publicPath: '/',
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: 'frontend/public/index.ejs' }),
+    new HtmlWebpackPlugin({ template: 'frontend/public/index.ejs', API_URL: awsStack.ServiceEndpoint }),
   ],
   devServer: {
     contentBase: path.join(__dirname, 'frontend/public'),
