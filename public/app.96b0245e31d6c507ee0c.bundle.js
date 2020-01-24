@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "/Do-I-need-an-Umbrella";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -37158,4 +37158,4 @@ module.exports = g;
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.bacc2189c3212250fce7.bundle.js.map
+//# sourceMappingURL=app.96b0245e31d6c507ee0c.bundle.js.map
