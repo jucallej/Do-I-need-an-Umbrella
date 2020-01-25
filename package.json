@@ -76,7 +76,7 @@
     "react-dom": "16.12.0",
     "react-router-dom": "5.1.2",
     "serverless": "1.61.3",
-    "serverless-http": "2.3.0",
+    "serverless-http": "2.3.1",
     "serverless-offline": "5.12.1",
     "serverless-stack-output": "0.2.3",
     "serverless-webpack": "5.3.1",
