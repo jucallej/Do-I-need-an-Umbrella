@@ -7,6 +7,17 @@ provider:
   region: eu-west-1
   environment:
     OPEN_WEATHER_MAP_API_KEY: ${env:OPEN_WEATHER_MAP_API_KEY}
+    ALLOWED_IP: ${env:ALLOWED_IP}
+  resourcePolicy:
+    - Effect: Allow
+      Principal: '*'
+      Action: execute-api:Invoke
+      Resource:
+        - execute-api:/*/*/*
+      Condition:
+        IpAddress:
+          aws:SourceIp:
+            - ${ALLOWED_IP}
 
 functions:
   app:
