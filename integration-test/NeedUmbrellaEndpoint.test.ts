@@ -4,7 +4,8 @@ import app from '../api/app';
 import OpenWeatherMapResponse from './mock_responses/5DaysOpenweathermap.json';
 
 export interface NeedUmbrellaEndpoint {
-    weatherId: number;
+    rain: number;
+    snow: number;
     result: boolean;
 }
 
@@ -22,21 +23,25 @@ describe('NeedUmbrellaEndpoint', () => {
     // https://openweathermap.org/weather-conditions
 
     it.each`
-        weatherId | result
-        ${200}    | ${true}
-        ${300}    | ${true}
-        ${400}    | ${true}
-        ${500}    | ${true}
-        ${600}    | ${true}
-        ${699}    | ${true}
-        ${700}    | ${false}
-        ${800}    | ${false}
+        rain    | snow    | result
+        ${0}    | ${0}    | ${false}
+        ${0.13} | ${0}    | ${true}
+        ${0}    | ${0.13} | ${true}
     `(
-        'returns true when all weather ids are equals or higher than 700 (in this case some weather id was set to ' +
-            '$weatherId and it should return $result)',
+        'returns true when some rain or snow percentage is higher than 0.13 (in this case the rain was set to $rain ' +
+            'and the snow was set to $snow and it should return $result)',
         (args, done) => {
-            const { weatherId, result } = args as NeedUmbrellaEndpoint;
-            OpenWeatherMapResponse.list[3].weather[0].id = weatherId;
+            const { rain, snow, result } = args as NeedUmbrellaEndpoint;
+            // Make sure the values before 3 hours are ignored
+            OpenWeatherMapResponse.list[0].rain = { '3h': 1000 };
+            OpenWeatherMapResponse.list[0].snow = { '3h': 1000 };
+
+            OpenWeatherMapResponse.list[1].rain = { '3h': rain };
+            OpenWeatherMapResponse.list[1].snow = { '3h': snow };
+
+            // Make sure the values after 12 + 3 hours are ignored
+            OpenWeatherMapResponse.list[6].rain = { '3h': 1000 };
+            OpenWeatherMapResponse.list[6].snow = { '3h': 1000 };
 
             nock('https://api.openweathermap.org')
                 .get(
