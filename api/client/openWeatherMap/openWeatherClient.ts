@@ -5,7 +5,7 @@ export const getWeatherData = async (
     lat: number,
     long: number
 ): Promise<{
-    list: Array<{ dt: number; weather: Array<{ id: number }> }>;
+    list: Array<{ dt: number; rain: { '3h': number }; snow: { '3h': number } }>;
     city: { name: string };
 }> => {
     const response = await fetch(
