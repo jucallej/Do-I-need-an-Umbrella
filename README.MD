@@ -1,6 +1,9 @@
 # Do I need an Umbrella
 [![Actions Status](https://github.com/jucallej/Do-I-need-an-Umbrella/workflows/CI/badge.svg)](https://github.com/jucallej/Do-I-need-an-Umbrella/actions)
 
+## Warning
+The website only works on some approved IPs
+
 ## Introduction
 
 Website that tells you if you need an umbrella in your location that day
