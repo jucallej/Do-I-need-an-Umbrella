@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useShouldUseUmbrella } from './useShouldUseUmbrella';
+import styles from './app.css';
 
 export enum UmbrellaState {
   LOADING_LOCATION,
@@ -20,7 +21,7 @@ const DescriptionForUmbrellaStates = new Map<UmbrellaState, string>([
 const App = () => {
   const shouldUseUmbrella = useShouldUseUmbrella();
 
-  return <h1>{ DescriptionForUmbrellaStates.get(shouldUseUmbrella) }</h1>
+  return <h1 className={styles.title}>{ DescriptionForUmbrellaStates.get(shouldUseUmbrella) }</h1>
 };
 
 export default App;
