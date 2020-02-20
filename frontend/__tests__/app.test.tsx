@@ -8,6 +8,11 @@ describe('App', () => {
 
   const generateUmbrellaDescription = () => shallow(<App/>).find('h1').text();
 
+  it('has the correct class name', () => {
+    (useShouldUseUmbrella as jest.Mock).mockReturnValue(UmbrellaState.LOADING_LOCATION);
+    expect(shallow(<App/>).find('h1').hasClass('title')).toBeTruthy();
+  });
+
   it('uses the LOADING_LOCATION state', () => {
     (useShouldUseUmbrella as jest.Mock).mockReturnValue(UmbrellaState.LOADING_LOCATION);
     expect(generateUmbrellaDescription()).toBe('Loading you location');
