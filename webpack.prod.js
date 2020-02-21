@@ -4,12 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const awsStack = require('./stack');
 
 module.exports = merge(common, {
-  mode: 'production',
+    mode: 'production',
 
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'frontend/public/index.ejs',
-      API_URL: awsStack.ServiceEndpoint
-    }),
-  ],
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'frontend/public/index.ejs',
+            API_URL: awsStack.ServiceEndpoint
+        })
+    ]
 });

@@ -4,14 +4,18 @@ import React from 'react';
 jest.mock('react-dom');
 
 describe('index', () => {
+    it('initialises the react App', () => {
+        document.getElementById = jest.fn();
+        (document.getElementById as jest.Mock).mockReturnValue(
+            'test getElementById'
+        );
 
-  it('initialises the react App', () => {
-    document.getElementById = jest.fn();
-    (document.getElementById as jest.Mock).mockReturnValue('test getElementById');
+        require('../index');
 
-    require('../index');
-
-    expect(ReactDOM.render).toHaveBeenCalledWith(<App/>, 'test getElementById');
-    expect(document.getElementById).toHaveBeenCalledWith('root');
-  });
+        expect(ReactDOM.render).toHaveBeenCalledWith(
+            <App />,
+            'test getElementById'
+        );
+        expect(document.getElementById).toHaveBeenCalledWith('root');
+    });
 });
