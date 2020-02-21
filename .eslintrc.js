@@ -6,7 +6,8 @@ module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    'plugin:react/recommended'
   ],
   globals: {
     Atomics: 'readonly',
@@ -18,9 +19,11 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'react-hooks'
   ],
   rules: {
-    "@typescript-eslint/no-unused-vars": "error"
+    'react-hooks/rules-of-hooks': 'error',
+    '@typescript-eslint/no-unused-vars': 'error'
   }
 };
