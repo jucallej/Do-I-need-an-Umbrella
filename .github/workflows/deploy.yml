@@ -34,6 +34,12 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           ALLOWED_IP: ${{ secrets.ALLOWED_IP }}
 
+      - uses: actions/upload-artifact@v1
+          if: failure()
+          with:
+            name: ui-tests
+            path: /home/runner/work/Do-I-need-an-Umbrella/Do-I-need-an-Umbrella/ui-tests/__image_snapshots__/__diff_output__
+
       - name: deploy fe
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
