@@ -5,6 +5,10 @@ import RequestInterceptor, {
 } from './requests/requestInterceptor';
 expect.extend({ toMatchImageSnapshot });
 
+const customConfig = {
+    customDiffConfig: { threshold: 1.6 }
+};
+
 describe('do I need an umbrella', () => {
     let requestInterceptor: RequestInterceptor;
 
@@ -24,10 +28,12 @@ describe('do I need an umbrella', () => {
             const landingPage = new LandingPage();
             await landingPage.start();
 
+            await expect(await landingPage.screenshot()).toMatchImageSnapshot(
+                customConfig
+            );
             await expect(await landingPage.title()).toMatch(
                 'Do I need an Umbrella'
             );
-            await expect(await landingPage.screenshot()).toMatchImageSnapshot();
         });
 
         it('shows the not need of an umbrella', async () => {
@@ -38,7 +44,9 @@ describe('do I need an umbrella', () => {
             const landingPage = new LandingPage();
             await landingPage.start();
 
-            await expect(await landingPage.screenshot()).toMatchImageSnapshot();
+            await expect(await landingPage.screenshot()).toMatchImageSnapshot(
+                customConfig
+            );
         });
     });
 
@@ -49,7 +57,7 @@ describe('do I need an umbrella', () => {
             requestInterceptor.setCallBackOnUmbrellaFetch(async () => {
                 await expect(
                     await landingPage.screenshot()
-                ).toMatchImageSnapshot();
+                ).toMatchImageSnapshot(customConfig);
                 done();
             });
 
@@ -64,14 +72,18 @@ describe('do I need an umbrella', () => {
             const landingPage = new LandingPage();
             await landingPage.start([]);
 
-            await expect(await landingPage.screenshot()).toMatchImageSnapshot();
+            await expect(await landingPage.screenshot()).toMatchImageSnapshot(
+                customConfig
+            );
         });
 
         it('shows an error when there are no permissions', async () => {
             const landingPage = new LandingPage();
             await landingPage.start([]);
 
-            await expect(await landingPage.screenshot()).toMatchImageSnapshot();
+            await expect(await landingPage.screenshot()).toMatchImageSnapshot(
+                customConfig
+            );
         });
     });
 });
