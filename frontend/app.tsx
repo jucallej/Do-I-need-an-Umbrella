@@ -15,7 +15,7 @@ export enum UmbrellaState {
 }
 
 const DescriptionForUmbrellaStates = new Map<UmbrellaState, string>([
-    [UmbrellaState.LOADING_LOCATION, 'Loading you location'],
+    [UmbrellaState.LOADING_LOCATION, 'Loading your location'],
     [UmbrellaState.LOADING_WEATHER, 'Loading the weather conditions'],
     [UmbrellaState.USE_UMBRELLA, 'Use an umbrella today'],
     [UmbrellaState.DO_NOT_USE_UMBRELLA, 'Do not use an umbrella today'],
