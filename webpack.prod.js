@@ -1,6 +1,7 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const awsStack = require('./stack');
 
 module.exports = merge(common, {
@@ -10,6 +11,7 @@ module.exports = merge(common, {
         new HtmlWebpackPlugin({
             template: 'frontend/public/index.ejs',
             API_URL: awsStack.ServiceEndpoint
-        })
+        }),
+        new FaviconsWebpackPlugin('./frontend/images/umbrella.svg')
     ]
 });
