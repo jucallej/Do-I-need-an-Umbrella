@@ -47,7 +47,6 @@ describe('do I need an umbrella', () => {
             const landingPage = new LandingPage();
 
             requestInterceptor.setCallBackOnUmbrellaFetch(async () => {
-                console.log('umbrella fetch');
                 await expect(
                     await landingPage.screenshot()
                 ).toMatchImageSnapshot();
