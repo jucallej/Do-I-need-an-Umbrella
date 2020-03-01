@@ -24,3 +24,8 @@ jobs:
         npm test
       env:
         CI: true
+    - uses: actions/upload-artifact@v1
+      if: failure()
+      with:
+        name: ui-tests
+        path: /home/runner/work/Do-I-need-an-Umbrella/Do-I-need-an-Umbrella/ui-tests/__image_snapshots__/__diff_output__

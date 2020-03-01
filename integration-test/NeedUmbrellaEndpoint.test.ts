@@ -53,6 +53,7 @@ describe('NeedUmbrellaEndpoint', () => {
                 .get(
                     `/api/needUmbrella?lat=${TEST_LATITUDE}&lon=${TEST_LONGITUDE}`
                 )
+                .expect('access-control-allow-origin', '*')
                 .expect(200, { shouldUseUmbrella: result }, done);
         }
     );

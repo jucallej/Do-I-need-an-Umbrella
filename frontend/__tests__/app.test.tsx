@@ -28,7 +28,7 @@ describe('App', () => {
             UmbrellaState.LOADING_LOCATION
         );
         const wrapper = shallow(<App />);
-        expect(wrapper.find('h1').text()).toBe('Loading you location');
+        expect(wrapper.find('h1').text()).toBe('Loading your location');
         expect(wrapper.find('SvgLoading')).toHaveLength(1);
     });
 
