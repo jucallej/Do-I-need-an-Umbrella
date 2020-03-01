@@ -11,10 +11,10 @@
     "test": "npm-run-all test:*",
     "test:run": "jest",
     "test:type-check": "tsc --noEmit",
-    "test:ui": "run-p start test:ui:start --race",
+    "test:ui": "run-p start:fe test:ui:start --race",
     "test:ui:start": "npm-run-all test:ui:wait test:ui:test",
     "test:ui:wait": "wait-on http://localhost:8080/Do-I-need-an-Umbrella",
-    "test:ui:test": "jest --config jest.ui.config.js",
+    "test:ui:test": "jest --runInBand --config jest.ui.config.js",
     "test:linting": "eslint --ext .ts --ext .tsx api/ integration-test/ frontend/ api/app.ts ui-tests/"
   },
   "devDependencies": {
