@@ -7,20 +7,11 @@ provider:
   region: eu-west-1
   environment:
     OPEN_WEATHER_MAP_API_KEY: ${env:OPEN_WEATHER_MAP_API_KEY}
-  resourcePolicy:
-    - Effect: Allow
-      Principal: '*'
-      Action: execute-api:Invoke
-      Resource:
-        - execute-api:/*/*/*
-      Condition:
-        IpAddress:
-          aws:SourceIp:
-            - ${env:ALLOWED_IP}
 
 functions:
   app:
     handler: index.handler
+    reservedConcurrency: 1
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
@@ -29,6 +20,7 @@ plugins:
   - serverless-webpack
   - serverless-offline
   - serverless-stack-output
+  - serverless-api-stage
 
 custom:
   webpack:
@@ -37,3 +29,7 @@ custom:
     excludeFiles: src/**/*.test.js
   output:
     file: ./stack.json
+  stageSettings:
+    MethodSettings:
+      ThrottlingBurstLimit: 1
+      ThrottlingRateLimit: 1
