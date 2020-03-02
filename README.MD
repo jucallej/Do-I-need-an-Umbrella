@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Website that tells you if you need an umbrella in your location that day
+Should you use an umbrella today?
 
 ## Tech stack:
 
