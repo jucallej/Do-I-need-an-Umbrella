@@ -5,9 +5,6 @@
 
 Website that tells you if you need an umbrella in your location that day
 
-## Warning
-The website only works on some approved IPs
-
 ## Tech stack:
 
 * Full stack website that uses `Node.js` && `React` (with `Express.js` && `TypeScript`)
