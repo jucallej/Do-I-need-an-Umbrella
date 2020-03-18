@@ -57,7 +57,7 @@
     "@typescript-eslint/parser": "2.24.0",
     "babel-jest": "25.1.0",
     "babel-loader": "8.0.6",
-    "cookie-parser": "1.4.4",
+    "cookie-parser": "1.4.5",
     "core-js": "3.6.4",
     "cors": "2.8.5",
     "css-loader": "3.4.2",
