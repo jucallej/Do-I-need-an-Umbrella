@@ -39,6 +39,12 @@ jobs:
           with:
             node-version: '12.x'
 
+        - name: npm install
+          run: |
+            npm ci
+          env:
+            CI: true
+
         - name: deploy to aws
           run: |
             npm run deploy:be
