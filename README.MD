@@ -1,5 +1,5 @@
 # Do I need an Umbrella
-[![Actions Status](https://github.com/jucallej/Do-I-need-an-Umbrella/workflows/Deploy/badge.svg)](https://github.com/jucallej/Do-I-need-an-Umbrella/actions)
+[![Actions Status](https://github.com/jucallej/Do-I-need-an-Umbrella/workflows/ci/badge.svg)](https://github.com/jucallej/Do-I-need-an-Umbrella/actions)
 
 ## Introduction
 
