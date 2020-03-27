@@ -5,3 +5,5 @@
 
 ./stack.json
 .vscode
+stack.json
+.serverless
