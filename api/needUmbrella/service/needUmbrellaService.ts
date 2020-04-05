@@ -22,7 +22,7 @@ export const shouldUseUmbrella = async (
     );
 
     return weatherData.list
-        .filter(dataPoint => {
+        .filter((dataPoint) => {
             const dateOfDataPoint = new Date(dataPoint.dt * 1000);
             return (
                 minimumDateChecked <= dateOfDataPoint &&

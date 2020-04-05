@@ -1,12 +1,12 @@
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
 import LandingPage from './pages/landingPage';
 import RequestInterceptor, {
-    FETCH_STATUS
+    FETCH_STATUS,
 } from './requests/requestInterceptor';
 expect.extend({ toMatchImageSnapshot });
 
 const customConfig = {
-    customDiffConfig: { threshold: 1.6 }
+    customDiffConfig: { threshold: 1.6 },
 };
 
 describe('do I need an umbrella', () => {
@@ -51,7 +51,7 @@ describe('do I need an umbrella', () => {
     });
 
     describe('loading', () => {
-        it('shows loading while it loads the response from the back end', done => {
+        it('shows loading while it loads the response from the back end', (done) => {
             const landingPage = new LandingPage();
 
             requestInterceptor.setCallBackOnUmbrellaFetch(async () => {

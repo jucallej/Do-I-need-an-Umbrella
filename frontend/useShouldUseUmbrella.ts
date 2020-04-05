@@ -18,7 +18,7 @@ export const useShouldUseUmbrella = (): UmbrellaState => {
     );
 
     useAsyncEffect(
-        async isMounted => {
+        async (isMounted) => {
             try {
                 switch (shouldUseUmbrella) {
                     case UmbrellaState.LOADING_LOCATION:

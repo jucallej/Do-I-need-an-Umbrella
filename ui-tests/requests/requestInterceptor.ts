@@ -3,11 +3,10 @@ const BACK_END_URL = 'http://localhost:3000/api';
 export enum FETCH_STATUS {
     ERROR = 1,
     NEED_UMBRELLA,
-    DO_NOT_NEED_UMBRELLA
+    DO_NOT_NEED_UMBRELLA,
 }
 
 export default class RequestInterceptor {
-
     // TODO: waiting on https://github.com/prettier/prettier/issues/7263
     // eslint-disable-next-line prettier/prettier
     #fetchStatus = FETCH_STATUS.NEED_UMBRELLA;
@@ -20,18 +19,24 @@ export default class RequestInterceptor {
 
     start = async (): Promise<void> => {
         await this.#page.setRequestInterception(true);
-        this.#page.on('request', async interceptedRequest => {
-            if (interceptedRequest.url() === `${BACK_END_URL}/needUmbrella?lat=1&lon=2`) {
+        this.#page.on('request', async (interceptedRequest) => {
+            if (
+                interceptedRequest.url() ===
+                `${BACK_END_URL}/needUmbrella?lat=1&lon=2`
+            ) {
                 await this.#callBackOnUmbrellaFetch();
                 await interceptedRequest.respond({
                     headers: {
-                        'access-control-allow-origin': '*'
+                        'access-control-allow-origin': '*',
                     },
-                    status: this.#fetchStatus !== FETCH_STATUS.ERROR ? 200 : 400,
-                    body: JSON.stringify({ shouldUseUmbrella: this.#fetchStatus === FETCH_STATUS.NEED_UMBRELLA })
+                    status:
+                        this.#fetchStatus !== FETCH_STATUS.ERROR ? 200 : 400,
+                    body: JSON.stringify({
+                        shouldUseUmbrella:
+                            this.#fetchStatus === FETCH_STATUS.NEED_UMBRELLA,
+                    }),
                 });
-            }
-            else {
+            } else {
                 await interceptedRequest.continue();
             }
         });

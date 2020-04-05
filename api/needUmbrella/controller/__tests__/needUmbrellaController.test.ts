@@ -26,7 +26,7 @@ describe('Need Umbrella Controller', () => {
         'returns shouldUseUmbrellaReturnValue in the json response when shouldUseUmbrellaReturnValue returns $shouldUseUmbrella',
         (args, done) => {
             const {
-                shouldUseUmbrellaReturnValue
+                shouldUseUmbrellaReturnValue,
             } = args as NeedUmbrellaControllerParams;
             (shouldUseUmbrella as jest.Mock).mockImplementation((lat, lon) => {
                 if (lat === TEST_LATITUDE && lon === TEST_LONGITUDE) {

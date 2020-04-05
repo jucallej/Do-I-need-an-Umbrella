@@ -37,7 +37,7 @@ describe('shouldUseUmbrella', () => {
             (): Promise<MockResponseInit> => {
                 expect(result.current).toBe(UmbrellaState.LOADING_WEATHER);
                 return Promise.resolve({
-                    body: JSON.stringify({ shouldUseUmbrella: true })
+                    body: JSON.stringify({ shouldUseUmbrella: true }),
                 });
             }
         );
@@ -60,7 +60,7 @@ describe('shouldUseUmbrella', () => {
             (): Promise<MockResponseInit> => {
                 expect(result.current).toBe(UmbrellaState.LOADING_WEATHER);
                 return Promise.resolve({
-                    body: JSON.stringify({ shouldUseUmbrella: false })
+                    body: JSON.stringify({ shouldUseUmbrella: false }),
                 });
             }
         );

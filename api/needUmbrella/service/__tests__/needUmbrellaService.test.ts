@@ -45,7 +45,7 @@ describe('Need Umbrella Service', () => {
             });
 
             shouldUseUmbrella(TEST_LATITUDE, TEST_LONGITUDE).then(
-                useUmbrella => {
+                (useUmbrella) => {
                     expect(useUmbrella).toBe(result);
                     done();
                 }

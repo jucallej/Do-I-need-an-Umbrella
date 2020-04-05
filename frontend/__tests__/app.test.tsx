@@ -10,12 +10,7 @@ describe('App', () => {
             UmbrellaState.LOADING_LOCATION
         );
         const wrapper = shallow(<App />);
-        expect(
-            wrapper
-                .find('section')
-                .at(0)
-                .hasClass('app')
-        ).toBeTruthy();
+        expect(wrapper.find('section').at(0).hasClass('app')).toBeTruthy();
         expect(wrapper.find('section > section').hasClass('icon')).toBeTruthy();
         expect(
             wrapper.find('section > section > SvgLoading').hasClass('svg')
