@@ -4,7 +4,7 @@ describe('Utils', () => {
     describe('getCurrentPosition', () => {
         const mockNavigator = (fn: jest.Mock): void => {
             global.window.navigator = {
-                geolocation: { getCurrentPosition: fn }
+                geolocation: { getCurrentPosition: fn },
             };
         };
 
@@ -15,7 +15,7 @@ describe('Utils', () => {
         it('rejects the promise if the browser does not support it', () => {
             global.window.navigator = {};
             expect.assertions(1);
-            return getCurrentPosition().catch(e =>
+            return getCurrentPosition().catch((e) =>
                 expect(e).toMatch('No browser support')
             );
         });
@@ -26,26 +26,28 @@ describe('Utils', () => {
             );
             mockNavigator(getCurrentPositionMock);
             expect.assertions(1);
-            return getCurrentPosition().catch(e =>
+            return getCurrentPosition().catch((e) =>
                 expect(e).toMatch('GPS error')
             );
         });
 
         it('passes the options to getCurrentPosition', async () => {
-            const getCurrentPositionMock = jest.fn(resolve => resolve('test'));
+            const getCurrentPositionMock = jest.fn((resolve) =>
+                resolve('test')
+            );
             mockNavigator(getCurrentPositionMock);
             await getCurrentPosition({ testOption: 'test' });
             expect(getCurrentPositionMock).toHaveBeenCalledWith(
                 expect.anything(),
                 expect.anything(),
                 {
-                    testOption: 'test'
+                    testOption: 'test',
                 }
             );
         });
 
         it('returns the return value of getCurrentPosition if it is successful', async () => {
-            const getCurrentPositionMock = jest.fn(resolve =>
+            const getCurrentPositionMock = jest.fn((resolve) =>
                 resolve({ coords: { latitude: 1, longitude: 2 } })
             );
             mockNavigator(getCurrentPositionMock);

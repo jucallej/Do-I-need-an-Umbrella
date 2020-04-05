@@ -4,7 +4,6 @@ const phone = devices['Pixel 2'];
 const FRONT_END_URL = 'http://localhost:8080';
 
 export default class LandingPage {
-
     // TODO: waiting on https://github.com/prettier/prettier/issues/7263
     // eslint-disable-next-line prettier/prettier
     #page = page;
@@ -14,7 +13,9 @@ export default class LandingPage {
         await context.overridePermissions(FRONT_END_URL, permissions);
     };
 
-    start = async (permissions: Permission[] = ['geolocation']): Promise<void> => {
+    start = async (
+        permissions: Permission[] = ['geolocation']
+    ): Promise<void> => {
         await this.#setPermission(permissions);
         await this.#page.emulate(phone);
         await this.#page.setGeolocation({ latitude: 1, longitude: 2 });

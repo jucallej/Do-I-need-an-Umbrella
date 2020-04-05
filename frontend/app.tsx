@@ -11,7 +11,7 @@ export enum UmbrellaState {
     LOADING_WEATHER,
     USE_UMBRELLA,
     DO_NOT_USE_UMBRELLA,
-    ERROR
+    ERROR,
 }
 
 const DescriptionForUmbrellaStates = new Map<UmbrellaState, string>([
@@ -21,8 +21,8 @@ const DescriptionForUmbrellaStates = new Map<UmbrellaState, string>([
     [UmbrellaState.DO_NOT_USE_UMBRELLA, 'Do not use an umbrella today'],
     [
         UmbrellaState.ERROR,
-        'There was an error. Did you allow the location permissions?'
-    ]
+        'There was an error. Did you allow the location permissions?',
+    ],
 ]);
 
 const IconsForUmbrellaStates = new Map<UmbrellaState, SvgrComponent>([
@@ -30,7 +30,7 @@ const IconsForUmbrellaStates = new Map<UmbrellaState, SvgrComponent>([
     [UmbrellaState.LOADING_WEATHER, Loading],
     [UmbrellaState.USE_UMBRELLA, Umbrella],
     [UmbrellaState.DO_NOT_USE_UMBRELLA, ClearWeather],
-    [UmbrellaState.ERROR, Error]
+    [UmbrellaState.ERROR, Error],
 ]);
 
 const App: React.FunctionComponent = () => {
