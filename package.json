@@ -94,7 +94,7 @@
     "pug": "2.0.4",
     "puppeteer": "2.1.1",
     "react": "16.13.1",
-    "react-dom": "16.13.0",
+    "react-dom": "16.13.1",
     "react-router-dom": "5.1.2",
     "serverless": "1.67.0",
     "serverless-api-stage": "1.4.0",
