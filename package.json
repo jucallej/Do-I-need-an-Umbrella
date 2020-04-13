@@ -60,7 +60,7 @@
     "cookie-parser": "1.4.5",
     "core-js": "3.6.4",
     "cors": "2.8.5",
-    "css-loader": "3.4.2",
+    "css-loader": "3.5.2",
     "debug": "4.1.1",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.2",
