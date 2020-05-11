@@ -41,6 +41,11 @@ jobs:
           env:
             CI: true
 
+        - name: wait for sequential releases
+          uses: softprops/turnstyle@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
         - name: deploy to aws
           run: |
             npm run deploy:be
