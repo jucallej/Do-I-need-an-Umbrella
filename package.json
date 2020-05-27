@@ -95,7 +95,7 @@
     "puppeteer": "2.1.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-router-dom": "5.1.2",
+    "react-router-dom": "5.2.0",
     "serverless": "1.71.3",
     "serverless-api-stage": "1.4.0",
     "serverless-http": "2.5.0",
