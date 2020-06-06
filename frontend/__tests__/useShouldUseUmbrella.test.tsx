@@ -2,7 +2,10 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useShouldUseUmbrella } from '../useShouldUseUmbrella';
 import { UmbrellaState } from '../app';
 import { getCurrentPosition } from '../utils';
-import { MockResponseInit } from 'jest-fetch-mock';
+import { MockResponseInit, enableMocks } from 'jest-fetch-mock';
+
+enableMocks();
+
 jest.mock('../utils');
 
 describe('shouldUseUmbrella', () => {
