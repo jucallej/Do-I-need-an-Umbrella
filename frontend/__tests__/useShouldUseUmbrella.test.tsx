@@ -3,6 +3,7 @@ import { useShouldUseUmbrella } from '../useShouldUseUmbrella';
 import { UmbrellaState } from '../app';
 import { getCurrentPosition } from '../utils';
 import { MockResponseInit } from 'jest-fetch-mock';
+
 jest.mock('../utils');
 
 describe('shouldUseUmbrella', () => {
@@ -11,7 +12,7 @@ describe('shouldUseUmbrella', () => {
     });
 
     beforeEach(() => {
-        fetchMock.resetMocks();
+        fetchMock.doMock();
         (getCurrentPosition as jest.Mock).mockReturnValue(
             Promise.resolve({ coords: { latitude: 1, longitude: 2 } })
         );

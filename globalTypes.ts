@@ -11,10 +11,10 @@ declare global {
             window: {
                 navigator:
                     | {
-                    geolocation: {
-                        getCurrentPosition: () => any;
-                    };
-                }
+                          geolocation: {
+                              getCurrentPosition: () => any;
+                          };
+                      }
                     | {};
             };
         }

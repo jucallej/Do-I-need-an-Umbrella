@@ -7,15 +7,9 @@ export enum FETCH_STATUS {
 }
 
 export default class RequestInterceptor {
-    // TODO: waiting on https://github.com/prettier/prettier/issues/7263
-    // eslint-disable-next-line prettier/prettier
     #fetchStatus = FETCH_STATUS.NEED_UMBRELLA;
-    // TODO: waiting on https://github.com/prettier/prettier/issues/7263
-    // eslint-disable-next-line prettier/prettier
     #page = page;
-    // TODO: waiting on https://github.com/prettier/prettier/issues/7263
-    // eslint-disable-next-line
-    #callBackOnUmbrellaFetch = async () => {};
+    #callBackOnUmbrellaFetch = async (): Promise<void> => Promise.resolve();
 
     start = async (): Promise<void> => {
         await this.#page.setRequestInterception(true);

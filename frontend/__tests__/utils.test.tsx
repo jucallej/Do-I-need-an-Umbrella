@@ -2,18 +2,26 @@ import { getCurrentPosition } from '../utils';
 
 describe('Utils', () => {
     describe('getCurrentPosition', () => {
-        const mockNavigator = (fn: jest.Mock): void => {
-            global.window.navigator = {
-                geolocation: { getCurrentPosition: fn },
-            };
-        };
+        let windowSpy: jest.SpyInstance<unknown>;
 
         beforeEach(() => {
-            delete global.window.navigator;
+            windowSpy = jest.spyOn(global, 'window', 'get');
         });
 
+        afterEach(() => {
+            windowSpy.mockRestore();
+        });
+
+        const mockNavigator = (fn: jest.Mock): void => {
+            windowSpy.mockImplementation(() => ({
+                navigator: {
+                    geolocation: { getCurrentPosition: fn },
+                },
+            }));
+        };
+
         it('rejects the promise if the browser does not support it', () => {
-            global.window.navigator = {};
+            windowSpy.mockImplementation(() => ({ navigator: {} }));
             expect.assertions(1);
             return getCurrentPosition().catch((e) =>
                 expect(e).toMatch('No browser support')
