@@ -2,9 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useShouldUseUmbrella } from '../useShouldUseUmbrella';
 import { UmbrellaState } from '../app';
 import { getCurrentPosition } from '../utils';
-import { MockResponseInit, enableMocks } from 'jest-fetch-mock';
-
-enableMocks();
+import { MockResponseInit } from 'jest-fetch-mock';
 
 jest.mock('../utils');
 
@@ -14,7 +12,7 @@ describe('shouldUseUmbrella', () => {
     });
 
     beforeEach(() => {
-        fetchMock.resetMocks();
+        fetchMock.doMock();
         (getCurrentPosition as jest.Mock).mockReturnValue(
             Promise.resolve({ coords: { latitude: 1, longitude: 2 } })
         );
