@@ -96,7 +96,7 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-router-dom": "5.2.0",
-    "serverless": "2.13.0",
+    "serverless": "2.14.0",
     "serverless-api-stage": "1.4.0",
     "serverless-http": "2.6.0",
     "serverless-offline": "6.8.0",
