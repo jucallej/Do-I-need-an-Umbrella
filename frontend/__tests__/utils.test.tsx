@@ -21,26 +21,25 @@ describe('Utils', () => {
         };
 
         const COORDINATES_OPTIONS_FIXTURE = {
-             accuracy: 1,
-             altitude: null,
-             altitudeAccuracy: null,
-             heading: null,
-             latitude: 12,
-             longitude: 123,
-             speed: null,
+            accuracy: 1,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            latitude: 12,
+            longitude: 123,
+            speed: null,
         };
 
         const POSITION_FIXTURE = {
             coords: COORDINATES_OPTIONS_FIXTURE,
             timestamp: 1234,
-       };
+        };
 
         const POSITION_OPTIONS_FIXTURE = {
             enableHighAccuracy: false,
             maximumAge: 1,
             timeout: 2,
         };
-
 
         it('rejects the promise if the browser does not support it', () => {
             windowSpy.mockImplementation(() => ({ navigator: {} }));
@@ -62,8 +61,9 @@ describe('Utils', () => {
         });
 
         it('passes the options to getCurrentPosition', async () => {
-            const getCurrentPositionMock = jest.fn((resolve, _reject, _options) =>
-                resolve(POSITION_FIXTURE)
+            const getCurrentPositionMock = jest.fn(
+                (resolve, reject, options) =>
+                    resolve && reject && options && resolve(POSITION_FIXTURE)
             );
             mockNavigator(getCurrentPositionMock);
             await getCurrentPosition(POSITION_OPTIONS_FIXTURE);
@@ -79,7 +79,9 @@ describe('Utils', () => {
                 resolve(POSITION_FIXTURE)
             );
             mockNavigator(getCurrentPositionMock);
-            const { coords } = await getCurrentPosition(POSITION_OPTIONS_FIXTURE);
+            const { coords } = await getCurrentPosition(
+                POSITION_OPTIONS_FIXTURE
+            );
             expect(coords).toStrictEqual(POSITION_FIXTURE.coords);
         });
     });
