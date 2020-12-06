@@ -1,4 +1,4 @@
-import devices from 'puppeteer/DeviceDescriptors';
+import { devices } from 'puppeteer';
 import { Permission } from 'puppeteer';
 const phone = devices['Pixel 2'];
 const FRONT_END_URL = 'http://localhost:8080';
