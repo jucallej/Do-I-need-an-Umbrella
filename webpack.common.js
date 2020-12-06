@@ -43,6 +43,6 @@ module.exports = {
         publicPath: '/Do-I-need-an-Umbrella'
     },
     devServer: {
-        contentBase: path.join(__dirname, 'frontend/public')
+        publicPath: '/Do-I-need-an-Umbrella',
     }
 };
