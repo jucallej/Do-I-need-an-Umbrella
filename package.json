@@ -108,7 +108,7 @@
     "use-async-effect": "2.2.2",
     "wait-on": "5.2.0",
     "webpack": "4.44.2",
-    "webpack-cli": "3.3.12",
+    "webpack-cli": "4.2.0",
     "webpack-dev-server": "3.11.0",
     "webpack-merge": "5.4.0",
     "webpack-node-externals": "2.5.2"
