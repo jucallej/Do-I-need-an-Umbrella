@@ -28,7 +28,7 @@
     "@babel/polyfill": "7.12.1",
     "@babel/preset-env": "7.12.11",
     "@babel/preset-react": "7.12.13",
-    "@babel/preset-typescript": "7.12.7",
+    "@babel/preset-typescript": "7.12.13",
     "@svgr/webpack": "5.5.0",
     "@testing-library/react-hooks": "5.0.3",
     "@types/babel__core": "7.1.12",
