@@ -18,7 +18,7 @@
     "test:linting": "eslint --ext .ts --ext .tsx api/ integration-test/ frontend/ api/app.ts ui-tests/"
   },
   "devDependencies": {
-    "@babel/cli": "7.12.16",
+    "@babel/cli": "7.12.17",
     "@babel/core": "7.12.16",
     "@babel/node": "7.12.17",
     "@babel/plugin-proposal-class-properties": "7.12.13",
