@@ -23,7 +23,7 @@ export default class LandingPage {
         await this.#page.goto(`${FRONT_END_URL}/Do-I-need-an-Umbrella`);
     };
 
-    screenshot = async (): Promise<string> => {
+    screenshot = async (): Promise<string | void | Buffer> => {
         return await this.#page.screenshot();
     };
 
