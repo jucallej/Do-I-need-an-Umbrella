@@ -2,7 +2,6 @@ pull_request_rules:
   - name: Automatic merge on CI passes
     conditions:
       - author~=^dependabot(|-preview)\[bot\]$
-      - status-success=CodeQL-Build
       - status-success=test
       - base=master
     actions:
