@@ -2,7 +2,7 @@ service: do-i-need-an-umbrella
 
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs14.x
   stage: dev
   region: eu-west-1
   environment:
