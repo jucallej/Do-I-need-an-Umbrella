@@ -38,7 +38,7 @@
     "@types/debug": "4.1.6",
     "@types/enzyme": "3.10.8",
     "@types/enzyme-adapter-react-16": "1.0.6",
-    "@types/expect-puppeteer": "4.4.5",
+    "@types/expect-puppeteer": "4.4.6",
     "@types/express": "4.17.13",
     "@types/http-errors": "1.8.0",
     "@types/jest": "26.0.24",
