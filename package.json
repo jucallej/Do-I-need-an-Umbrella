@@ -47,7 +47,7 @@
     "@types/morgan": "1.9.3",
     "@types/node": "15.6.1",
     "@types/node-fetch": "2.5.11",
-    "@types/node-sass-middleware": "0.0.31",
+    "@types/node-sass-middleware": "0.0.32",
     "@types/pug": "2.0.5",
     "@types/puppeteer": "5.4.3",
     "@types/react": "17.0.14",
