@@ -35,7 +35,7 @@
     "@types/cookie-parser": "1.4.2",
     "@types/core-js": "2.5.4",
     "@types/cors": "2.8.12",
-    "@types/debug": "4.1.6",
+    "@types/debug": "4.1.7",
     "@types/enzyme": "3.10.9",
     "@types/enzyme-adapter-react-16": "1.0.6",
     "@types/expect-puppeteer": "4.4.6",
