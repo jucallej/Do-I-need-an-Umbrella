@@ -33,7 +33,7 @@
     "@testing-library/react-hooks": "7.0.1",
     "@types/babel__core": "7.1.15",
     "@types/cookie-parser": "1.4.2",
-    "@types/core-js": "2.5.4",
+    "@types/core-js": "2.5.5",
     "@types/cors": "2.8.12",
     "@types/debug": "4.1.7",
     "@types/enzyme": "3.10.9",
