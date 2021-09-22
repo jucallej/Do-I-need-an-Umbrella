@@ -45,7 +45,7 @@
     "@types/jest-environment-puppeteer": "4.4.1",
     "@types/jest-image-snapshot": "4.3.1",
     "@types/morgan": "1.9.3",
-    "@types/node": "15.6.1",
+    "@types/node": "16.9.6",
     "@types/node-fetch": "2.5.12",
     "@types/node-sass-middleware": "0.0.32",
     "@types/pug": "2.0.5",
