@@ -31,7 +31,7 @@
     "@babel/preset-typescript": "7.16.7",
     "@svgr/webpack": "6.1.2",
     "@testing-library/react-hooks": "7.0.2",
-    "@types/babel__core": "7.1.17",
+    "@types/babel__core": "7.1.18",
     "@types/cookie-parser": "1.4.2",
     "@types/core-js": "2.5.5",
     "@types/cors": "2.8.12",
