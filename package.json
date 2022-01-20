@@ -26,7 +26,7 @@
     "@babel/plugin-proposal-object-rest-spread": "7.16.7",
     "@babel/plugin-proposal-optional-chaining": "7.16.7",
     "@babel/polyfill": "7.12.1",
-    "@babel/preset-env": "7.16.8",
+    "@babel/preset-env": "7.16.10",
     "@babel/preset-react": "7.16.7",
     "@babel/preset-typescript": "7.16.7",
     "@svgr/webpack": "6.2.0",
