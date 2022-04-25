@@ -50,7 +50,7 @@
     "@types/node-sass-middleware": "0.0.32",
     "@types/pug": "2.0.6",
     "@types/puppeteer": "5.4.5",
-    "@types/react": "18.0.5",
+    "@types/react": "18.0.6",
     "@types/react-dom": "18.0.2",
     "@types/supertest": "2.0.11",
     "@typescript-eslint/eslint-plugin": "4.33.0",
