@@ -58,7 +58,7 @@
     "babel-jest": "28.0.3",
     "babel-loader": "8.2.5",
     "cookie-parser": "1.4.6",
-    "core-js": "3.22.3",
+    "core-js": "3.22.4",
     "cors": "2.8.5",
     "css-loader": "6.7.1",
     "debug": "4.3.4",
