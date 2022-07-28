@@ -86,7 +86,7 @@
     "jest-svg-transformer": "1.0.0",
     "morgan": "1.10.0",
     "nock": "13.2.9",
-    "node-fetch": "2.6.7",
+    "node-fetch": "3.2.9",
     "node-sass-middleware": "1.0.1",
     "nodemon": "2.0.19",
     "normalize.css": "8.0.1",
