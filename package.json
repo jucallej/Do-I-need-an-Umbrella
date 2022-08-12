@@ -99,7 +99,7 @@
     "react-router-dom": "6.3.0",
     "serverless": "3.21.0",
     "serverless-api-stage": "1.4.0",
-    "serverless-http": "3.0.1",
+    "serverless-http": "3.0.2",
     "serverless-offline": "9.1.7",
     "serverless-stack-output": "0.2.3",
     "serverless-webpack": "5.8.0",
