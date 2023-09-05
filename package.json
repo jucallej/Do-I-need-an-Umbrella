@@ -32,7 +32,7 @@
     "@svgr/webpack": "6.5.1",
     "@testing-library/react-hooks": "8.0.1",
     "@types/babel__core": "7.20.1",
-    "@types/cookie-parser": "1.4.3",
+    "@types/cookie-parser": "1.4.4",
     "@types/core-js": "2.5.5",
     "@types/cors": "2.8.13",
     "@types/debug": "4.1.8",
