@@ -48,7 +48,7 @@
     "@types/node": "15.6.1",
     "@types/node-fetch": "2.6.1",
     "@types/node-sass-middleware": "0.0.32",
-    "@types/pug": "2.0.6",
+    "@types/pug": "2.0.7",
     "@types/puppeteer": "5.4.6",
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.3",
