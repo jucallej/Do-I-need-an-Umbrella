@@ -34,7 +34,7 @@
     "@types/babel__core": "7.20.4",
     "@types/cookie-parser": "1.4.6",
     "@types/core-js": "2.5.8",
-    "@types/cors": "2.8.15",
+    "@types/cors": "2.8.16",
     "@types/debug": "4.1.11",
     "@types/enzyme": "3.10.12",
     "@types/enzyme-adapter-react-16": "1.0.9",
