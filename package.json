@@ -43,7 +43,7 @@
     "@types/http-errors": "2.0.4",
     "@types/jest": "27.5.0",
     "@types/jest-environment-puppeteer": "5.0.6",
-    "@types/jest-image-snapshot": "6.2.2",
+    "@types/jest-image-snapshot": "6.2.3",
     "@types/morgan": "1.9.9",
     "@types/node": "15.6.1",
     "@types/node-fetch": "2.6.1",
