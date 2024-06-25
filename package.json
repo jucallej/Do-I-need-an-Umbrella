@@ -96,7 +96,7 @@
     "puppeteer": "18.0.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-router-dom": "6.23.1",
+    "react-router-dom": "6.24.0",
     "serverless": "3.39.0",
     "serverless-api-stage": "1.4.0",
     "serverless-http": "3.2.0",
