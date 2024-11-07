@@ -100,7 +100,7 @@
     "serverless": "3.39.0",
     "serverless-api-stage": "1.4.0",
     "serverless-http": "3.2.0",
-    "serverless-offline": "13.8.2",
+    "serverless-offline": "13.8.3",
     "serverless-stack-output": "0.2.3",
     "serverless-webpack": "5.15.0",
     "style-loader": "4.0.0",
