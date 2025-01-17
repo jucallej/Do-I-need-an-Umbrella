@@ -36,7 +36,7 @@
     "@types/core-js": "2.5.8",
     "@types/cors": "2.8.17",
     "@types/debug": "4.1.12",
-    "@types/enzyme": "3.10.12",
+    "@types/enzyme": "3.10.18",
     "@types/enzyme-adapter-react-16": "1.0.9",
     "@types/expect-puppeteer": "5.0.6",
     "@types/express": "5.0.0",
